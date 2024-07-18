@@ -27,7 +27,7 @@ jobs:
       - name: Build PlatformIO env:ESP32
         run: pio run
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         name: Upload artifacts (commit)
         if: (startsWith(github.event.ref, 'refs/tags') != true)
         with:
@@ -35,7 +35,7 @@ jobs:
            .pio/build/esp32dev/*.bin
            .pio/build/esp32dev/recovery_firmware.zip
            
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         name: Upload artifacts (release)
         if: startsWith(github.ref, 'refs/tags/')
         with:
