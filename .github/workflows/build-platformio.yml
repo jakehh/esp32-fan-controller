@@ -32,8 +32,8 @@ jobs:
         if: (startsWith(github.event.ref, 'refs/tags') != true)
         with:
           path: |
-           .pio/build/*.bin
-           .pio/build/recovery_firmware.zip
+           .pio/build/esp32dev/*.bin
+           .pio/build/esp32dev/recovery_firmware.zip
            
       - uses: actions/upload-artifact@v3
         name: Upload artifacts (release)
@@ -41,5 +41,5 @@ jobs:
         with:
           name: firmware-release
           path: |
-            .pio/build/*.bin
-            .pio/build/recovery_firmware.zip
+            .pio/build/esp32dev/*.bin
+            .pio/build/esp32dev/recovery_firmware.zip
