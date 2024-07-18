@@ -27,7 +27,6 @@ jobs:
       - name: Build PlatformIO env:ESP32
         run: |
           pio run
-          zip -j .pio/build/esp32dev/recovery_firmware.zip
           rm -f .pio/build/esp32dev/*.bin
 
       - uses: actions/upload-artifact@v4
